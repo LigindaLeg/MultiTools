@@ -17,16 +17,12 @@ Default Config:
 
 
 Plugin permissions:
-```
-mt.cheater
-mt.reverse
-```
+```mt.cheater
+mt.reverse```
 
 
 Plugin Commands:
-```
-cheater (id) - Forces player to cheat checking
-reverse [id] - Reverse player
-```
+```cheater (id) - Forces player to cheat checking
+reverse [id] - Reverse player```
 
 Supported Exiled 8.9.6+

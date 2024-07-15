@@ -1,0 +1,2 @@
+D:\VS Projects\MultiTools\MultiTools\obj\Debug\MultiTools.csproj.AssemblyReference.cache
+D:\VS Projects\MultiTools\MultiTools\obj\Debug\MultiTools.csproj.CoreCompileInputs.cache

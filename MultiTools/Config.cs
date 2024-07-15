@@ -10,9 +10,6 @@ namespace MultiTools
 
         [Description("Are debug messages displayed?")]
         public bool Debug { get; set; } = false;
-
-        [Description("Logs Language? (RU, EN, PL)")]
-        public string Lang { get; set; } = "EN";
         [Description("How much time does a cheater have before being banned?")]
         public float CheatTime { get; set; } = 30;
         [Description("Cheat Ban Reason?")]

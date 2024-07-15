@@ -4,7 +4,7 @@ using Exiled.Permissions.Extensions;
 using System;
 using UnityEngine;
 
-namespace MultiTools
+namespace MultiTools.Commands
 {
     [CommandHandler(typeof(RemoteAdminCommandHandler))]
     public class Reverse : ICommand
@@ -23,7 +23,7 @@ namespace MultiTools
                 response = "You do not have permission to use this command!";
                 return false;
             }
-            else if (arguments.Count < 1)
+            if (arguments.Count < 1)
             {
                 if (player.Scale != new Vector3(-1, -1, -1))
                 {
@@ -31,14 +31,14 @@ namespace MultiTools
                     response = "Reversed!";
                     return true;
                 }
-                else if (player.Scale == new Vector3(-1, -1, -1))
+                if (player.Scale == new Vector3(-1, -1, -1))
                 {
                     player.Scale = new Vector3(1, 1, 1);
                     response = "Reversed!";
                     return true;
                 }
             }
-            else if (arguments.At(0) == player.Id.ToString())
+            if (arguments.At(0) == player.Id.ToString())
             {
                 if (player.Scale != new Vector3(-1, -1, -1))
                 {
@@ -46,14 +46,14 @@ namespace MultiTools
                     response = "Reversed!";
                     return true;
                 }
-                else if (player.Scale == new Vector3(-1, -1, -1))
+                if (player.Scale == new Vector3(-1, -1, -1))
                 {
                     player.Scale = new Vector3(1, 1, 1);
                     response = "Reversed!";
                     return true;
                 }
             }
-            else if (arguments.At(0) != player.Id.ToString())
+            if (arguments.At(0) != player.Id.ToString())
             {
                 player = Player.Get(arguments.At(0));
                 if (player == null)
@@ -61,13 +61,13 @@ namespace MultiTools
                     response = $"Player with ID {arguments.At(0)} not found";
                     return false;
                 }
-                else if (player.Scale != new Vector3(-1, -1, -1))
+                if (player.Scale != new Vector3(-1, -1, -1))
                 {
                     player.Scale = new Vector3 (-1, -1, -1);
                     response = $"Reversed {player.Nickname}!";
                     return true;
                 }
-                else if (player.Scale == new Vector3(-1, -1, -1))
+                if (player.Scale == new Vector3(-1, -1, -1))
                 {
                     player.Scale = new Vector3(1, 1, 1);
                     response = $"Reversed {player.Nickname}!";

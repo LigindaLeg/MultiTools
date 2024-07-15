@@ -3,7 +3,7 @@ MultiTools plugin for Exiled has many features
 
 
 Default Config:
-```multi_tools:
+``` multi_tools:
 	#Is the plugin enabled?
  	is_enabled: true
   	#Are debug messages displayed?
@@ -13,16 +13,17 @@ Default Config:
   	#How much time does a cheater have before being banned?
    	cheat_time: 30
 	#Cheat Ban Reason?
- 	BanReason: "You are banned for cheating [MultiTools]"```
+ 	BanReason: "You are banned for cheating [MultiTools]" ```
 
 
 Plugin permissions:
-```mt.cheater
-mt.reverse```
+mt.cheater
+mt.reverse 
 
 
 Plugin Commands:
-```cheater (id) - Forces player to cheat checking
-reverse [id] - Reverse player```
+cheater (id) - Forces player to cheat checking
+reverse [id] - Reverse player
+blockdoors (id)
 
 Supported Exiled 8.9.6+

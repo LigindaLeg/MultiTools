@@ -43,22 +43,28 @@
     <Reference Include="CommandSystem.Core">
       <HintPath>..\..\..\Для Плагинов EXILED\dependencies\CommandSystem.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Exiled.API">
+    <Reference Include="Exiled.API, Version=8.9.6.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Для Плагинов EXILED\dependencies\Exiled.API.dll</HintPath>
     </Reference>
-    <Reference Include="Exiled.CreditTags">
+    <Reference Include="Exiled.CreditTags, Version=8.9.6.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Для Плагинов EXILED\dependencies\Exiled.CreditTags.dll</HintPath>
     </Reference>
-    <Reference Include="Exiled.CustomItems">
+    <Reference Include="Exiled.CustomItems, Version=8.9.6.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Для Плагинов EXILED\dependencies\Exiled.CustomItems.dll</HintPath>
     </Reference>
-    <Reference Include="Exiled.CustomRoles">
+    <Reference Include="Exiled.CustomRoles, Version=8.9.6.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Для Плагинов EXILED\dependencies\Exiled.CustomRoles.dll</HintPath>
     </Reference>
-    <Reference Include="Exiled.Events">
+    <Reference Include="Exiled.Events, Version=8.9.6.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Для Плагинов EXILED\dependencies\Exiled.Events.dll</HintPath>
     </Reference>
-    <Reference Include="Exiled.Permissions">
+    <Reference Include="Exiled.Permissions, Version=8.9.6.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Для Плагинов EXILED\dependencies\Exiled.Permissions.dll</HintPath>
     </Reference>
     <Reference Include="MapEditorReborn">
@@ -105,6 +111,7 @@
   <ItemGroup>
     <Compile Include="Commands\BlockDoors.cs" />
     <Compile Include="Commands\Cheater.cs" />
+    <Compile Include="Commands\CuffCommand.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="EventHandlers.cs" />
     <Compile Include="Plugin.cs" />

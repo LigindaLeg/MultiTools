@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Exiled.API.Features;
 using Exiled.Events.Features;
 
@@ -14,13 +15,14 @@ namespace MultiTools
         public static Plugin Instance;
         public Player Cheater;
         public EventHandlers eventHandlers;
-        public Player BlockDoorList;
+        public List<Player> BlockDoorList = new List<Player>();
         public override void OnEnabled()
         {
             Instance = this;
             this.eventHandlers = new EventHandlers();
             Exiled.Events.Handlers.Player.Left += new CustomEventHandler<Exiled.Events.EventArgs.Player.LeftEventArgs>(eventHandlers.OnCheaterLeave);
             Exiled.Events.Handlers.Player.InteractingDoor += new CustomEventHandler<Exiled.Events.EventArgs.Player.InteractingDoorEventArgs>(eventHandlers.DoorBlock);
+            Exiled.Events.Handlers.Server.LocalReporting += new CustomEventHandler<Exiled.Events.EventArgs.Player.LocalReportingEventArgs>(eventHandlers.Reporting);
             Log.Info("MultiTools has been enabled.");
 
             base.OnEnabled();
@@ -32,6 +34,7 @@ namespace MultiTools
             this.eventHandlers = null;
             Exiled.Events.Handlers.Player.Left -= new CustomEventHandler<Exiled.Events.EventArgs.Player.LeftEventArgs>(eventHandlers.OnCheaterLeave);
             Exiled.Events.Handlers.Player.InteractingDoor -= new CustomEventHandler<Exiled.Events.EventArgs.Player.InteractingDoorEventArgs>(eventHandlers.DoorBlock);
+            Exiled.Events.Handlers.Server.LocalReporting -= new CustomEventHandler<Exiled.Events.EventArgs.Player.LocalReportingEventArgs>(eventHandlers.Reporting);
             Log.Info("MultiTools has been disabled.");
 
             base.OnDisabled();

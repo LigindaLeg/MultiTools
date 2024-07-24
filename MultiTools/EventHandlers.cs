@@ -17,29 +17,37 @@ namespace MultiTools
         }
 		public void DoorBlock(Exiled.Events.EventArgs.Player.InteractingDoorEventArgs ev)
         {
-			if (ev.Player == Plugin.Instance.BlockDoorList)
+			if (Plugin.Instance.BlockDoorList.Contains(ev.Player))
             {
 				if (ev.Door.IsLocked)
                 {
-					ev.Door.ChangeLock(Exiled.API.Enums.DoorLockType.None);
-                }
-				if (!ev.Door.IsLocked)
+					Log.Info(ev.Door + "is locked");
+					ev.IsAllowed = true;
+					ev.Door.Unlock();
+				}
+				else if (!ev.Door.IsLocked)
                 {
-					if (ev.Door.IsFullyClosed)
-                    {
-						ev.Player.ShowHint("Please keep door open for use it!", 5f);
-                    }
-					if (ev.Door.IsMoving)
-					{
-						ev.Player.ShowHint("Please keep door open for use it!", 5f);
-					}
-					if (ev.Door.IsFullyOpen)
-                    {
-						ev.Door.Lock(99999999, Exiled.API.Enums.DoorLockType.AdminCommand);
-                    }
-					
-                }
+					Log.Info(ev.Door + "is unlocked");
+					ev.IsAllowed = false;
+					ev.Door.Lock(99999, Exiled.API.Enums.DoorLockType.SpecialDoorFeature);
+				}
+            }
+			else
+            {
+				return;
             }
         }
+		public void Reporting(Exiled.Events.EventArgs.Player.LocalReportingEventArgs ev)
+		{
+			string reason = Plugin.Instance.Translation.AdminReportHint;
+			ev.Player.ShowHint(Plugin.Instance.Translation.ReportHint.Replace("[target]", ev.Target.Nickname), 10f);
+			foreach (Player player in Player.List)
+            {
+				if (player.RemoteAdminAccess)
+                {
+					player.ShowHint(reason.Replace("[target]", ev.Target.Nickname).Replace("[player]", ev.Player.Nickname).Replace("[reason]", ev.Reason), 15f);
+                }
+            }
+		}
 	}
 }

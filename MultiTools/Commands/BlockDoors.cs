@@ -18,7 +18,6 @@ namespace MultiTools.Commands
         public string Description { get; } = "Block the used door.";
 
         Player BlockDoorUser;
-        static int index;
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
             if (!sender.CheckPermission("mt.blockdoor"))
@@ -33,7 +32,7 @@ namespace MultiTools.Commands
                 return false;
             }
 
-            BlockDoorUser = Player.Get(Convert.ToInt32(arguments.At(0)));
+            BlockDoorUser = Player.Get(arguments.ElementAt(0));
 
             if (BlockDoorUser == null)
             {
@@ -41,18 +40,20 @@ namespace MultiTools.Commands
                 return false;
             }
             
-            if (BlockDoorUser != null)
+            if (BlockDoorUser != null && arguments.Count == 1)
             {
-                
-                if (Plugin.Instance.BlockDoorList == BlockDoorUser)
+                Log.Info(BlockDoorUser);
+                if (Plugin.Instance.BlockDoorList.Contains(BlockDoorUser))
                 {
-                    Plugin.Instance.BlockDoorList = null;
+                    Log.Info(BlockDoorUser + " listed");
+                    Plugin.Instance.BlockDoorList.Remove(BlockDoorUser);
                     response = $"New block door status: off\nPlayer: {BlockDoorUser.Nickname}";
                     return true;
                 }
-                if (Plugin.Instance.BlockDoorList != BlockDoorUser)
+                if (!Plugin.Instance.BlockDoorList.Contains(BlockDoorUser))
                 {
-                    Plugin.Instance.BlockDoorList = BlockDoorUser;
+                    Log.Info(BlockDoorUser + " not listed");
+                    Plugin.Instance.BlockDoorList.Add(BlockDoorUser);
                     response = $"New block door status: on\nPlayer: {BlockDoorUser.Nickname}";
                     return true;
                 }

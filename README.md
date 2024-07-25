@@ -29,7 +29,8 @@ Default Config:
 
 
 Plugin permissions:
-``` mt.cheater
+```
+mt.cheater
 mt.reverse 
 mt.blockdoors
  ```

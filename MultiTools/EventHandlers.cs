@@ -1,12 +1,11 @@
 ﻿using System;
 using Exiled.API.Features;
-using Exiled.API.Features.Doors;
-using Exiled.Events;
+using Exiled.Events.EventArgs.Player;
 namespace MultiTools
 {
 	public class EventHandlers
 	{
-		public void OnCheaterLeave(Exiled.Events.EventArgs.Player.LeftEventArgs ev)
+		public void OnCheaterLeave(LeftEventArgs ev)
         {
 			Player MultiTool = Player.Get("[MultiTools]");
 			if (ev.Player == Plugin.Instance.Cheater)
@@ -15,7 +14,7 @@ namespace MultiTools
 				Plugin.Instance.Cheater = null;
 			}
         }
-		public void DoorBlock(Exiled.Events.EventArgs.Player.InteractingDoorEventArgs ev)
+		public void DoorBlock(InteractingDoorEventArgs ev)
         {
 			if (Plugin.Instance.BlockDoorList.Contains(ev.Player))
             {
@@ -37,7 +36,7 @@ namespace MultiTools
 				return;
             }
         }
-		public void Reporting(Exiled.Events.EventArgs.Player.LocalReportingEventArgs ev)
+		public void Reporting(LocalReportingEventArgs ev)
 		{
 			string reason = Plugin.Instance.Translation.AdminReportHint;
 			ev.Player.ShowHint(Plugin.Instance.Translation.ReportHint.Replace("[target]", ev.Target.Nickname), 10f);
@@ -48,6 +47,17 @@ namespace MultiTools
 					player.ShowHint(reason.Replace("[target]", ev.Target.Nickname).Replace("[player]", ev.Player.Nickname).Replace("[reason]", ev.Reason), 15f);
                 }
             }
+		}
+		public void TeslaManager(TriggeringTeslaEventArgs ev)
+        {
+			if (Plugin.Instance.Config.IgnoreTeslaRoles.Contains(ev.Player.Role.Type))
+            {
+				ev.DisableTesla = true;
+            }
+			else
+			{
+				return;
+			}
 		}
 	}
 }

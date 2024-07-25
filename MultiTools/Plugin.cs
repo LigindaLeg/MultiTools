@@ -23,6 +23,7 @@ namespace MultiTools
             Exiled.Events.Handlers.Player.Left += new CustomEventHandler<Exiled.Events.EventArgs.Player.LeftEventArgs>(eventHandlers.OnCheaterLeave);
             Exiled.Events.Handlers.Player.InteractingDoor += new CustomEventHandler<Exiled.Events.EventArgs.Player.InteractingDoorEventArgs>(eventHandlers.DoorBlock);
             Exiled.Events.Handlers.Server.LocalReporting += new CustomEventHandler<Exiled.Events.EventArgs.Player.LocalReportingEventArgs>(eventHandlers.Reporting);
+            Exiled.Events.Handlers.Player.TriggeringTesla += new CustomEventHandler<Exiled.Events.EventArgs.Player.TriggeringTeslaEventArgs>(eventHandlers.TeslaManager);
             Log.Info("MultiTools has been enabled.");
 
             base.OnEnabled();
@@ -35,6 +36,7 @@ namespace MultiTools
             Exiled.Events.Handlers.Player.Left -= new CustomEventHandler<Exiled.Events.EventArgs.Player.LeftEventArgs>(eventHandlers.OnCheaterLeave);
             Exiled.Events.Handlers.Player.InteractingDoor -= new CustomEventHandler<Exiled.Events.EventArgs.Player.InteractingDoorEventArgs>(eventHandlers.DoorBlock);
             Exiled.Events.Handlers.Server.LocalReporting -= new CustomEventHandler<Exiled.Events.EventArgs.Player.LocalReportingEventArgs>(eventHandlers.Reporting);
+            Exiled.Events.Handlers.Player.TriggeringTesla -= new CustomEventHandler<Exiled.Events.EventArgs.Player.TriggeringTeslaEventArgs>(eventHandlers.TeslaManager);
             Log.Info("MultiTools has been disabled.");
 
             base.OnDisabled();

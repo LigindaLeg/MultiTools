@@ -1,5 +1,7 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using Exiled.API.Interfaces;
+using PlayerRoles;
 
 namespace MultiTools
 {
@@ -20,5 +22,10 @@ namespace MultiTools
         public int CuffRange { get; set; } = 3;
         [Description("Cuff Process Delay?")]
         public int CuffDel { get; set; } = 1;
+        [Description("Tesla Ignore Roles?")]
+        public List<RoleTypeId> IgnoreTeslaRoles { get; set; } = new List<RoleTypeId>() 
+        { 
+            RoleTypeId.NtfCaptain, RoleTypeId.NtfPrivate, RoleTypeId.NtfSergeant, RoleTypeId.NtfSpecialist, RoleTypeId.FacilityGuard 
+        };
     }
 }

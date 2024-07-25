@@ -10,5 +10,6 @@
         public string TargetCuffHint { get; private set; } = $"You are tied up, do not move for [time] seconds!";
         public string PlayerCuffHint { get; private set; } = $"You cuff player [target] do not move for [time] seconds!";
         public string CuffError { get; private set; } = $"You need to hold a weapon in your hands to do this.";
+        public string CallBroadcast { get; private set; } = $"Admins!\n Player [player] calling you!";
     }
 }

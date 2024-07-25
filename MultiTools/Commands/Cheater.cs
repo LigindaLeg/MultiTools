@@ -18,9 +18,6 @@ namespace MultiTools.Commands
 
         Player Admin;
         Player Cheater1;
-        /* NOT USED */
-        static Player[] CheatersList;
-        static int index;
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
             Admin = Player.Get(sender);
@@ -65,12 +62,6 @@ namespace MultiTools.Commands
                         response = "Using: \ncheater add (ID)\ncheater remove (ID)\ncheater stop (ID)";
                         return false;
                 }
-
-
-                /*Cheater.Role.Set(PlayerRoles.RoleTypeId.Tutorial);
-                Timing.RunCoroutine(CheaterHint());
-                response = $"Player {Cheater.Nickname} was forced to cheat checker";
-                return true;*/
             }
             else
             {
@@ -87,7 +78,7 @@ namespace MultiTools.Commands
                 {
                     string hint = Plugin.Instance.Translation.CheaterHint.Replace("[Admin.Nickname]", Admin.Nickname).Replace("[Admin.DisplayNickname]", Admin.DisplayNickname).Replace("[time]", f11.ToString());
                     Cheater1.ShowHint(hint, 1f);
-                    f11 = f11 - 1;
+                    f11--;
                     yield return Timing.WaitForSeconds(1f);
                 }
                 if (f11 < 0)

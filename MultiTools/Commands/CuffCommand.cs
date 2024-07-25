@@ -49,7 +49,7 @@ namespace MultiTools.Commands
                 {
                     target.ShowHint(Plugin.Instance.Translation.TargetCuffHint.Replace("[time]", f11.ToString()), 1f);
                     player.ShowHint(Plugin.Instance.Translation.PlayerCuffHint.Replace("[target]", target.Nickname).Replace("[time]", f11.ToString()), 1f);
-                    f11 = f11 - 1;
+                    f11--;
                     yield return Timing.WaitForSeconds(1f);
                 }
                 target.Handcuff();

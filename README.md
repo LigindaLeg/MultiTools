@@ -37,7 +37,8 @@ mt.blockdoors
 
 
 Plugin Commands:
-``` cheater (id) - Forces player to cheat checking
+```
+cheater (id) - Forces player to cheat checking
 reverse [id] - Reverse player
 blockdoors (id) - Set enabled or disabled to lock/unlock doors on interacting
 .cuff - Cuffing the teammates

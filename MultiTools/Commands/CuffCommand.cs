@@ -1,7 +1,5 @@
 ﻿using CommandSystem;
 using Exiled.API.Features;
-using Exiled.Permissions.Extensions;
-using InventorySystem.Items;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,7 +25,7 @@ namespace MultiTools.Commands
             var ray = new Ray(player.CameraTransform.position + (player.CameraTransform.forward * 0.1f), player.CameraTransform.forward);
             if (!Physics.Raycast(ray, out RaycastHit hit, Plugin.Instance.Config.CuffRange))
             {
-                response = "";
+                response = "You're standing too far away";
                 return false;
             }
             var target = Player.Get(hit.collider);
@@ -37,7 +35,7 @@ namespace MultiTools.Commands
                 return false;
             }
             Timing.RunCoroutine(Cuff(target, player));
-            response = "";
+            response = "Cuffing started";
             return true;
         }
         public IEnumerator<float> Cuff(Player target, Player player)

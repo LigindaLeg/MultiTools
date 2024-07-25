@@ -1,11 +1,6 @@
 ﻿using CommandSystem;
 using Exiled.API.Features;
-using Exiled.Permissions.Extensions;
-using InventorySystem.Items;
 using System;
-using System.Collections.Generic;
-using UnityEngine;
-using MEC;
 
 namespace MultiTools.Commands
 {

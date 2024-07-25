@@ -2,9 +2,7 @@
 using Exiled.API.Features;
 using Exiled.Permissions.Extensions;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 
 namespace MultiTools.Commands
 {
@@ -20,27 +18,29 @@ namespace MultiTools.Commands
         Player BlockDoorUser;
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
+            BlockDoorUser = Player.Get(arguments.ElementAt(0));
+
             if (!sender.CheckPermission("mt.blockdoor"))
             {
                 response = "You do not have permission to use this command";
                 return false;
             }
 
-            if (arguments.Count == 0 || arguments.Count > 1)
+            else if (arguments.Count == 0 || arguments.Count > 1)
             {
                 response = "Usage: blockdoors (ID)";
                 return false;
             }
 
-            BlockDoorUser = Player.Get(arguments.ElementAt(0));
+            
 
-            if (BlockDoorUser == null)
+            else if (BlockDoorUser == null)
             {
                 response = $"Player with ID {arguments.At(0)} not found";
                 return false;
             }
             
-            if (BlockDoorUser != null && arguments.Count == 1)
+            else if (BlockDoorUser != null && arguments.Count == 1)
             {
                 Log.Info(BlockDoorUser);
                 if (Plugin.Instance.BlockDoorList.Contains(BlockDoorUser))
@@ -50,7 +50,7 @@ namespace MultiTools.Commands
                     response = $"New block door status: off\nPlayer: {BlockDoorUser.Nickname}";
                     return true;
                 }
-                if (!Plugin.Instance.BlockDoorList.Contains(BlockDoorUser))
+                else if (!Plugin.Instance.BlockDoorList.Contains(BlockDoorUser))
                 {
                     Log.Info(BlockDoorUser + " not listed");
                     Plugin.Instance.BlockDoorList.Add(BlockDoorUser);

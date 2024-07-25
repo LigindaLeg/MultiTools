@@ -28,17 +28,17 @@ namespace MultiTools.Commands
                 response = "You do not have permission to use this command!";
                 return false;
             }
-            if (Cheater1 == null)
+            else if (Cheater1 == null)
             {
                 response = $"Player with ID {arguments.At(0)} not found";
                 return false;
             }
-            if (arguments.Count < 2)
+            else if (arguments.Count < 2)
             {
                 response = "Using: \ncheater add (ID)\ncheater remove (ID)\ncheater stop (ID)";
                 return false;
             }
-            if (sender.CheckPermission("mt.Cheater") && Cheater1 != null)
+            else if (sender.CheckPermission("mt.Cheater") && Cheater1 != null)
             {
                 switch (arguments.At(0))
                 {

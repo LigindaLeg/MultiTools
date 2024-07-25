@@ -113,6 +113,7 @@
     <Compile Include="Commands\Call.cs" />
     <Compile Include="Commands\Cheater.cs" />
     <Compile Include="Commands\CuffCommand.cs" />
+    <Compile Include="Commands\Ptp.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="EventHandlers.cs" />
     <Compile Include="Plugin.cs" />

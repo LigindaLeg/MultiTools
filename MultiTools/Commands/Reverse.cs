@@ -23,7 +23,7 @@ namespace MultiTools.Commands
                 response = "You do not have permission to use this command!";
                 return false;
             }
-            if (arguments.Count < 1)
+            else if (arguments.Count < 1)
             {
                 if (player.Scale != new Vector3(-1, -1, -1))
                 {
@@ -31,14 +31,14 @@ namespace MultiTools.Commands
                     response = "Reversed!";
                     return true;
                 }
-                if (player.Scale == new Vector3(-1, -1, -1))
+                else if (player.Scale == new Vector3(-1, -1, -1))
                 {
                     player.Scale = new Vector3(1, 1, 1);
                     response = "Reversed!";
                     return true;
                 }
             }
-            if (arguments.At(0) == player.Id.ToString())
+            else if (arguments.At(0) == player.Id.ToString())
             {
                 if (player.Scale != new Vector3(-1, -1, -1))
                 {
@@ -46,14 +46,14 @@ namespace MultiTools.Commands
                     response = "Reversed!";
                     return true;
                 }
-                if (player.Scale == new Vector3(-1, -1, -1))
+                else if (player.Scale == new Vector3(-1, -1, -1))
                 {
                     player.Scale = new Vector3(1, 1, 1);
                     response = "Reversed!";
                     return true;
                 }
             }
-            if (arguments.At(0) != player.Id.ToString())
+            else if (arguments.At(0) != player.Id.ToString())
             {
                 player = Player.Get(arguments.At(0));
                 if (player == null)
@@ -61,13 +61,13 @@ namespace MultiTools.Commands
                     response = $"Player with ID {arguments.At(0)} not found";
                     return false;
                 }
-                if (player.Scale != new Vector3(-1, -1, -1))
+                else if (player.Scale != new Vector3(-1, -1, -1))
                 {
                     player.Scale = new Vector3 (-1, -1, -1);
                     response = $"Reversed {player.Nickname}!";
                     return true;
                 }
-                if (player.Scale == new Vector3(-1, -1, -1))
+                else if (player.Scale == new Vector3(-1, -1, -1))
                 {
                     player.Scale = new Vector3(1, 1, 1);
                     response = $"Reversed {player.Nickname}!";

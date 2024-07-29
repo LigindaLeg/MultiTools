@@ -34,6 +34,8 @@ Plugin permissions:
 mt.cheater
 mt.reverse 
 mt.blockdoors
+mt.check
+mt.warn
  ```
 
 
@@ -44,6 +46,8 @@ reverse [id] - Reverse player
 blockdoors (id) - Set enabled or disabled to lock/unlock doors on interacting
 .cuff - Cuffing the teammates
 .call - Calls all admins
+warn <add, delete, list> (id) [reason] - Manage Player Warnings
+playercheck - Check player violations
 ```
 
 Supported Exiled 8.9.6+

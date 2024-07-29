@@ -1,11 +1,19 @@
 ﻿using System;
+using System.IO;
+using System.Net.Http;
 using Exiled.API.Features;
 using Exiled.Events.EventArgs.Player;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace MultiTools
 {
 	public class EventHandlers
 	{
-		public void OnCheaterLeave(LeftEventArgs ev)
+        public string message;
+        public string webhookUrl;
+
+        public void OnCheaterLeave(LeftEventArgs ev)
         {
 			Player MultiTool = Player.Get("[MultiTools]");
 			if (ev.Player == Plugin.Instance.Cheater)
@@ -59,5 +67,43 @@ namespace MultiTools
 				return;
 			}
 		}
-	}
+
+        public void OnPlayerBanned(BannedEventArgs ev)
+        {
+            string steamId = ev.Target.UserId;
+            string reason = ev.Details.Reason;
+            string time = DateTime.Today.TimeOfDay.Hours.ToString() + ":" + DateTime.Today.TimeOfDay.Minutes.ToString();
+
+            string logEntry = $"Ban: {steamId} Reason:{reason} Time: {time} min.";
+            message = Plugin.Instance.Config.DSMessage.Replace("{bantime}", DateTime.Today.TimeOfDay.Hours.ToString() + ":" + DateTime.Today.TimeOfDay.Minutes.ToString()).Replace("{admin}", ev.Player.Nickname).Replace("{bad}", ev.Target.Nickname).Replace("{reason}", ev.Details.Reason);
+            webhookUrl = Plugin.Instance.Config.WebhookNotifyBan;
+
+            try
+            {
+                SendDiscordMessage(webhookUrl, message);
+                File.AppendAllText($@"{Paths.Plugins}/MultiTools/{Server.Port}/BadList.txt", logEntry + Environment.NewLine);
+                Log.Info($"Ban saved: {logEntry}");
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Error: {ex.Message}");
+            }
+        }
+
+        static async Task SendDiscordMessage(string webhookUrl, string message)
+        {
+            using (var client = new HttpClient())
+            {
+                var payload = new
+                {
+                    content = message
+                };
+
+                var json = Newtonsoft.Json.JsonConvert.SerializeObject(payload);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(webhookUrl, content);
+            }
+        }
+    }
 }

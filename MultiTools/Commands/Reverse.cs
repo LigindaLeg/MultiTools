@@ -40,15 +40,15 @@ namespace MultiTools.Commands
             }
             else if (arguments.At(0) == player.Id.ToString())
             {
-                if (player.Scale != new Vector3(-1, -1, -1))
+                if (player.Scale != new Vector3(player.Scale.x, -1, player.Scale.z))
                 {
-                    player.Scale = new Vector3(-1, -1, -1);
+                    player.Scale = new Vector3(player.Scale.x, -1, player.Scale.z);
                     response = "Reversed!";
                     return true;
                 }
-                else if (player.Scale == new Vector3(-1, -1, -1))
+                else if (player.Scale == new Vector3(player.Scale.x, -1, player.Scale.z))
                 {
-                    player.Scale = new Vector3(1, 1, 1);
+                    player.Scale = new Vector3(player.Scale.x, 1, player.Scale.z);
                     response = "Reversed!";
                     return true;
                 }
@@ -61,15 +61,15 @@ namespace MultiTools.Commands
                     response = $"Player with ID {arguments.At(0)} not found";
                     return false;
                 }
-                else if (player.Scale != new Vector3(-1, -1, -1))
+                else if (player.Scale != new Vector3(player.Scale.x, -1, player.Scale.z))
                 {
-                    player.Scale = new Vector3 (-1, -1, -1);
+                    player.Scale = new Vector3 (player.Scale.x, -1, player.Scale.z);
                     response = $"Reversed {player.Nickname}!";
                     return true;
                 }
-                else if (player.Scale == new Vector3(-1, -1, -1))
+                else if (player.Scale == new Vector3(player.Scale.x, -1, player.Scale.z))
                 {
-                    player.Scale = new Vector3(1, 1, 1);
+                    player.Scale = new Vector3(player.Scale.x, 1, player.Scale.z);
                     response = $"Reversed {player.Nickname}!";
                     return true;
                 }

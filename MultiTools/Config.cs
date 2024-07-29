@@ -27,5 +27,11 @@ namespace MultiTools
         { 
             RoleTypeId.NtfCaptain, RoleTypeId.NtfPrivate, RoleTypeId.NtfSergeant, RoleTypeId.NtfSpecialist, RoleTypeId.FacilityGuard 
         };
+
+        [Description("Discord Webhook to Ban-Notify?")]
+        public string WebhookNotifyBan { get; set; } = "Paste your webhook here";
+
+        [Description("Discord Message Template?")]
+        public string DSMessage { get; set; } = "{bantime} \n```html\n<Выдал:> {admin} \n<Нарушитель:> {bad} \n<Причина:> {reason} \n```";
     }
 }

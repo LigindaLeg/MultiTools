@@ -26,6 +26,10 @@ Default Config:
   - NtfSergeant
   - NtfSpecialist
   - FacilityGuard
+  # Discord Webhook to Ban-Notify?
+  webhook_notify_ban: 'Paste your webhook here'
+  # Discord Message Template?
+  d_s_message: '{bantime} \n```html\n<Выдал:> {admin} \n<Нарушитель:> {bad} \n<Причина:> {reason} \n```'
  ```
 
 

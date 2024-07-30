@@ -114,6 +114,7 @@
     <Compile Include="Commands\Cheater.cs" />
     <Compile Include="Commands\Check.cs" />
     <Compile Include="Commands\CuffCommand.cs" />
+    <Compile Include="Commands\Ntfcall.cs" />
     <Compile Include="Commands\Warn.cs" />
     <Compile Include="Commands\Ptp.cs" />
     <Compile Include="Config.cs" />

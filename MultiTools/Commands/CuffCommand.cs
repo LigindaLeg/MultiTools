@@ -29,9 +29,9 @@ namespace MultiTools.Commands
                 return false;
             }
             var target = Player.Get(hit.collider);
-            if (!Plugin.Instance.Config.CuffEnabled)
+            if (!Plugin.Instance.Config.rpEnabled)
             {
-                response = "Command disabled on this server";
+                response = "RP Mode disabled on this server";
                 return false;
             }
             Timing.RunCoroutine(Cuff(target, player));

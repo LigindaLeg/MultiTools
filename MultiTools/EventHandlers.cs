@@ -105,5 +105,33 @@ namespace MultiTools
                 var response = await client.PostAsync(webhookUrl, content);
             }
         }
+        public void ChaosMystery()
+        {
+            if (Plugin.Instance.Config.rpEnabled)
+            {
+                foreach (Player player in Player.List)
+                {
+                    if (player.Role == PlayerRoles.RoleTypeId.FacilityGuard)
+                    {
+                        int a = UnityEngine.Random.Range(0, 3);
+                        if (a == 0)
+                        {
+                            player.Role.Set(PlayerRoles.RoleTypeId.ChaosRifleman, PlayerRoles.RoleSpawnFlags.UseSpawnpoint);
+                            player.ShowHint(Plugin.Instance.Translation.ChaosHint, 3f);
+                            player.ClearInventory(true);
+                            player.AddItem(ItemType.SCP268);
+                            player.AddItem(ItemType.GunAK);
+                            player.AddItem(ItemType.Ammo762x39, 100);
+                            player.AddItem(ItemType.ArmorCombat);
+                            player.AddItem(ItemType.Medkit);
+                            player.AddItem(ItemType.KeycardChaosInsurgency);
+                        }
+                    }
+                }
+            }
+            
+        }
+
+
     }
 }

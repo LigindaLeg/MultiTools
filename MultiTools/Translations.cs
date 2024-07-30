@@ -11,5 +11,7 @@
         public string PlayerCuffHint { get; private set; } = $"You cuff player [target] do not move for [time] seconds!";
         public string CuffError { get; private set; } = $"You need to hold a weapon in your hands to do this.";
         public string CallBroadcast { get; private set; } = $"Admins!\n Player [player] calling you!";
+        public string NTFCall { get; private set; } = "Mobile Task Force Unit Epsilon 11 Designated .g5 .g5 .g5 **** has entered the facility about t minus 2 minutes";
+        public string ChaosHint { get; private set; } = "You were spawned as a Chaos Insurgency Spy";
     }
 }

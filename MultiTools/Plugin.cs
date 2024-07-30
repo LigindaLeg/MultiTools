@@ -25,6 +25,7 @@ namespace MultiTools
             Exiled.Events.Handlers.Server.LocalReporting += new CustomEventHandler<Exiled.Events.EventArgs.Player.LocalReportingEventArgs>(eventHandlers.Reporting);
             Exiled.Events.Handlers.Player.TriggeringTesla += new CustomEventHandler<Exiled.Events.EventArgs.Player.TriggeringTeslaEventArgs>(eventHandlers.TeslaManager);
             Exiled.Events.Handlers.Player.Banned += new CustomEventHandler<Exiled.Events.EventArgs.Player.BannedEventArgs>(eventHandlers.OnPlayerBanned);
+            Exiled.Events.Handlers.Server.RoundStarted += new CustomEventHandler(eventHandlers.ChaosMystery);
             Log.Info("MultiTools has been enabled.");
 
             base.OnEnabled();

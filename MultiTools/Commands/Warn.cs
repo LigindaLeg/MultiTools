@@ -5,8 +5,6 @@ using System.Linq;
 using CommandSystem;
 using Exiled.API.Features;
 using Exiled.Permissions.Extensions;
-using MEC;
-using UnityEngine;
 
 namespace MultiTools.Commands
 {

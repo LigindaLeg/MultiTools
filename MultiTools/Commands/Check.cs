@@ -4,8 +4,6 @@ using System.IO;
 using CommandSystem;
 using Exiled.API.Features;
 using Exiled.Permissions.Extensions;
-using MEC;
-using UnityEngine;
 
 namespace MultiTools.Commands
 {
@@ -73,7 +71,7 @@ namespace MultiTools.Commands
             }
             else if (warnings.Count > 0 && bans.Count == 0)
             {
-                response = $"Warnins for {bad.Nickname} (SteamID: {steamId}):\n" + string.Join("\n", warnings) + "\n\n" + $"Player {bad.Nickname} (SteamID: {steamId}) has not bans!";
+                response = $"Warnings for {bad.Nickname} (SteamID: {steamId}):\n" + string.Join("\n", warnings) + "\n\n" + $"Player {bad.Nickname} (SteamID: {steamId}) has not bans!";
                 return true;
             }
             else if (warnings.Count == 0 && bans.Count == 0)

@@ -30,18 +30,6 @@ Default Config:
   webhook_notify_ban: 'Paste your webhook here'
   # Discord Message Template?
   d_s_message: '{bantime} \n```html\n<Выдал:> {admin} \n<Нарушитель:> {bad} \n<Причина:> {reason} \n
-  # Update interval for the hint in seconds. // interwal aktualizacji hint.
-  update_interval: 1 
-  # Server name to be displayed in the hint.
-  server_name: 'YOU SERVER NAME' // Nazwa serwera.
-  # Round time format. Use placeholders: {0} - minutes, {1} - seconds.
-  round_time_format: ' {0}:{1}' // NIE DOTYKAC!
-  # Hint text format. Use placeholders: {0} - player role color, {1} - player nickname, {2} - player role, {3} - spectator count, {4} - kill count, {5} - server name, {6} - round time.
-  hint_text: |2-
-    <voffset=-0.2em><pos=-300><size=15><align=left><voffset=0><color={0}>👤</color> <color={0}>| You name:</color> {1}
-    <voffset=-0.2em><pos=-300><color={0}>🎭</color> <color={0}>| You play for:</color> {2}
-    <voffset=-0.2em><pos=-300><color={0}>👥</color> <color={0}>| You're being watched:</color> <color={0}>{3}</color></voffset></pos>
-    <size=20><align=center><voffset=-32em><u><pos=-0>{5}</pos></u></voffset>\n<pos=-0></pos></align></size>```'
  ```
 
 
@@ -52,6 +40,7 @@ mt.reverse
 mt.blockdoors
 mt.check
 mt.warn
+mt.customprefix
  ```
 
 
@@ -63,7 +52,8 @@ blockdoors (id) - Set enabled or disabled to lock/unlock doors on interacting
 .cuff - Cuffing the teammates
 .call - Calls all admins
 warn <add, delete, list> (id) [reason] - Manage Player Warnings
-playercheck - Check player violations
+playercheck (id) - Check player violations
+customprefix (id) (color) (prefix) - Set custom prefix to player
 ```
 
 Supported Exiled 8.9.6+

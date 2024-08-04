@@ -38,7 +38,11 @@ namespace MultiTools.Commands
 
             string subCommand = arguments.At(0).ToLower();
             string playerId = arguments.At(1);
-            string reason = arguments.Count > 2 ? arguments.At(2) : "";
+            string reason = "";
+            for (int a = 2; a < arguments.Count; a++)
+            {
+                reason = reason + arguments.At(a) + " ";
+            }
 
             switch (subCommand)
             {

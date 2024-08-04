@@ -13,24 +13,6 @@ namespace MultiTools
         public string message;
         public string webhookUrl;
 
-        public void OnRoundStarted()
-        {
-	        Plugin.Instance.roundStartTime = DateTime.Now;
-	        Plugin.Instance.roundStarted = true;
-        }
-
-        public void OnPlayerDied(DiedEventArgs ev)
-        {
-	        if (ev.Attacker != null && ev.Attacker != ev.Player)
-	        {
-		        if (!Plugin.Instance.playerKills.ContainsKey(ev.Attacker))
-		        {
-			        Plugin.Instance.playerKills[ev.Attacker] = 0;
-		        }
-		        Plugin.Instance.playerKills[ev.Attacker]++;
-	        }
-        }
-
         public void OnCheaterLeave(LeftEventArgs ev)
         {
 			Player MultiTool = Player.Get("[MultiTools]");
@@ -149,5 +131,7 @@ namespace MultiTools
             }
             
         }
+
+
     }
 }

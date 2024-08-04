@@ -18,7 +18,7 @@ namespace MultiTools.Commands
         Player BlockDoorUser;
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
-            BlockDoorUser = Player.Get(arguments.ElementAt(0));
+            
 
             if (!sender.CheckPermission("mt.blockdoor"))
             {
@@ -32,9 +32,9 @@ namespace MultiTools.Commands
                 return false;
             }
 
-            
+            BlockDoorUser = Player.Get(arguments.ElementAt(0));
 
-            else if (BlockDoorUser == null)
+            if (BlockDoorUser == null)
             {
                 response = $"Player with ID {arguments.At(0)} not found";
                 return false;

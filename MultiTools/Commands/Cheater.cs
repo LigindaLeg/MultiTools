@@ -21,14 +21,15 @@ namespace MultiTools.Commands
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
             Admin = Player.Get(sender);
-            int cheaterID = Convert.ToInt32(arguments.At(1));
-            Cheater1 = Player.Get(cheaterID);
+            
             if (!sender.CheckPermission("mt.cheater"))
             {
                 response = "You do not have permission to use this command!";
                 return false;
             }
-            else if (Cheater1 == null)
+            int cheaterID = Convert.ToInt32(arguments.At(1));
+            Cheater1 = Player.Get(cheaterID);
+            if (Cheater1 == null)
             {
                 response = $"Player with ID {arguments.At(0)} not found";
                 return false;

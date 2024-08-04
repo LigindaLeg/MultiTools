@@ -16,7 +16,7 @@ namespace MultiTools.Commands
         public string[] Aliases { get; } = new[] { "pcheck", "pch", "playercheck" };
 
         /// <inheritdoc/>
-        public string Description { get; } = "Проверяет список нарушений игрока.";
+        public string Description { get; } = "Check player's violations.";
 
         private static readonly string FilePath = $@"{Paths.Plugins}/MultiTools/{Server.Port}/BadList.txt";
 
@@ -27,7 +27,7 @@ namespace MultiTools.Commands
                 response = "You do not have permission to use this command!";
                 return false;
             }
-            if (arguments.Count != 1)
+            else if (arguments.Count != 1)
             {
                 response = "Using: p (ID)";
                 return false;

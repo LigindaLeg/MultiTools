@@ -13,7 +13,6 @@
         public string CallBroadcast { get; private set; } = $"Admins!\n Player [player] calling you!";
         public string NTFCall { get; private set; } = "Mobile Task Force Unit Epsilon 11 Designated .g5 .g5 .g5 **** has entered the facility about t minus 2 minutes";
         public string ChaosHint { get; private set; } = "You were spawned as a Chaos Insurgency Spy";
-        
         public string ClassD { get; set; } = "<color=orange>Класс-Д</color>";
         public string Scientist { get; set; } = "<color=#F0E827>Учёный</color>";
         public string FacilityGuard { get; set; } = "<color=#505050>Служба безопасности</color>";

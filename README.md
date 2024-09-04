@@ -4,7 +4,8 @@ MultiTools plugin for Exiled has many features
 
 
 Default Config:
-``` multi_tools:
+```
+multi_tools:
   # Is the plugin enabled?
   is_enabled: true
   # Are debug messages displayed?
@@ -13,19 +14,6 @@ Default Config:
   cheat_time: 30
   # Cheat Ban Reason?
   ban_reason: 'You are banned for cheating [MultiTools]'
-  # Cuff Command?
-  cuff_enabled: true
-  # Cuff Range?
-  cuff_range: 3
-  # Cuff Process Delay?
-  cuff_del: 1
-  # Tesla Ignore Roles?
-  ignore_tesla_roles:
-  - NtfCaptain
-  - NtfPrivate
-  - NtfSergeant
-  - NtfSpecialist
-  - FacilityGuard
   # Discord Webhook to Ban-Notify?
   webhook_notify_ban: 'Paste your webhook here'
   # Discord Message Template?
@@ -41,6 +29,7 @@ mt.blockdoors
 mt.check
 mt.warn
 mt.customprefix
+mt.permanentrole
  ```
 
 
@@ -54,6 +43,7 @@ blockdoors (id) - Set enabled or disabled to lock/unlock doors on interacting
 warn <add, delete, list> (id) [reason] - Manage Player Warnings
 playercheck (id) - Check player violations
 customprefix (id) (color) (prefix) - Set custom prefix to player
+pr (ID) (role) - Set permanent player group on server
 ```
 
 Supported Exiled 8.9.6+

@@ -62,8 +62,6 @@ namespace MultiTools
             Exiled.Events.Handlers.Player.InteractingDoor += new CustomEventHandler<Exiled.Events.EventArgs.Player.InteractingDoorEventArgs>(eventHandlers.DoorBlock);
             Exiled.Events.Handlers.Server.LocalReporting += new CustomEventHandler<Exiled.Events.EventArgs.Player.LocalReportingEventArgs>(eventHandlers.Reporting);
             Exiled.Events.Handlers.Player.Banned += new CustomEventHandler<Exiled.Events.EventArgs.Player.BannedEventArgs>(eventHandlers.OnPlayerBanned);
-            Exiled.Events.Handlers.Server.RoundEnded += new CustomEventHandler<Exiled.Events.EventArgs.Server.RoundEndedEventArgs>(eventHandlers.EndFix);
-            Exiled.Events.Handlers.Server.RestartingRound += new CustomEventHandler(eventHandlers.EndFix1);
         }
 
         public void UnregisterEvents()
@@ -73,8 +71,6 @@ namespace MultiTools
             Exiled.Events.Handlers.Player.InteractingDoor -= new CustomEventHandler<Exiled.Events.EventArgs.Player.InteractingDoorEventArgs>(eventHandlers.DoorBlock);
             Exiled.Events.Handlers.Server.LocalReporting -= new CustomEventHandler<Exiled.Events.EventArgs.Player.LocalReportingEventArgs>(eventHandlers.Reporting);
             Exiled.Events.Handlers.Player.Banned -= new CustomEventHandler<Exiled.Events.EventArgs.Player.BannedEventArgs>(eventHandlers.OnPlayerBanned);
-            Exiled.Events.Handlers.Server.RoundEnded -= new CustomEventHandler<Exiled.Events.EventArgs.Server.RoundEndedEventArgs>(eventHandlers.EndFix);
-            Exiled.Events.Handlers.Server.RestartingRound -= new CustomEventHandler(eventHandlers.EndFix1);
 
             eventHandlers = null;
         }

@@ -103,19 +103,5 @@ namespace MultiTools
         {
             
         }
-        public void EndFix(RoundEndedEventArgs ev)
-        {
-            Timing.KillCoroutines();
-            Timing.RunCoroutine(Round(ev));
-        }
-        public IEnumerator<float> Round(Exiled.Events.EventArgs.Server.RoundEndedEventArgs ev)
-        {
-            yield return Timing.WaitForSeconds(ev.TimeToRestart);
-            Exiled.API.Features.Round.RestartSilently();
-        }
-        public void EndFix1()
-        {
-            Timing.KillCoroutines();
-        }
     }
 }

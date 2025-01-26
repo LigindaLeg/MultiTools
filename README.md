@@ -1,5 +1,5 @@
 ![Total downloads](https://img.shields.io/github/downloads/LigindaLeg/MultiTools/total)
-# MultiTools
+# MultiTools / no longer supported
 MultiTools plugin for Exiled has many features
 
 

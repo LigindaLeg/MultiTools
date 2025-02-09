@@ -1,5 +1,5 @@
 ![Total downloads](https://img.shields.io/github/downloads/LigindaLeg/MultiTools/total)
-# MultiTools / no longer supported
+# MultiTools
 MultiTools plugin for Exiled has many features
 
 
@@ -18,6 +18,8 @@ multi_tools:
   webhook_notify_ban: 'Paste your webhook here'
   # Discord Message Template?
   d_s_message: '{bantime} \n```html\n<Выдал:> {admin} \n<Нарушитель:> {bad} \n<Причина:> {reason} \n
+  # The lights color of the facility after the alpha warhead exploded?
+  color: red
  ```
 
 
@@ -29,20 +31,18 @@ mt.blockdoors
 mt.check
 mt.warn
 mt.customprefix
-mt.permanentrole
- ```
+```
 
 
 Plugin Commands:
 ```
 cheater (id) - Forces player to cheat checking
 reverse [id] - Reverse player
-blockdoors (id) - Set enabled or disabled to lock/unlock doors on interacting
+blockdoors [id] - Set enabled or disabled to lock/unlock doors on interacting
 .call - Calls all admins
 warn <add, delete, list> (id) [reason] - Manage Player Warnings
 playercheck (id) - Check player violations
 customprefix (id) (color) (prefix) - Set custom prefix to player
-pr (ID) (role) - Set permanent player group on server
 ```
 
 Supported Exiled 8.9.6+

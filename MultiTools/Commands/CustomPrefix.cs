@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using CommandSystem;
 using Exiled.API.Features;
 using Exiled.Permissions.Extensions;
+using YamlDotNet.Core.Tokens;
 
 namespace MultiTools.Commands
 {
@@ -18,9 +21,10 @@ namespace MultiTools.Commands
         /// <inheritdoc/>
         public string Description { get; } = "Set custom prefix to player";
 
+        private static readonly string FilePath = $@"{Paths.Plugins}/MultiTools/{Server.Port}/Prefix.txt";
         public List<string> Colors { get; } = new List<string>() 
         { 
-            "pink", "brown", "silver", "light_green", "crimson", "cyan", "aqua", "deep_pink", "tomato", "yellow", "magenta", "blue_green", "orange", "lime", "green", "emerald", "carmine", "nickel", "mint", "army_green", "pumpkin", "gold", "teal", "blue", "purple", "light_red", "silver_blue", "police_blue"
+            "red", "pink", "brown", "silver", "light_green", "crimson", "cyan", "aqua", "deep_pink", "tomato", "yellow", "magenta", "blue_green", "orange", "lime", "green", "emerald", "carmine", "nickel", "mint", "army_green", "pumpkin", "gold", "teal", "purple", "light_red", "silver_blue", "police_blue"
         };
 
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
@@ -60,8 +64,23 @@ namespace MultiTools.Commands
                 }
                 player.RankName = prefix;
                 player.RankColor = color;
+                string text = $"{player.UserId}:{prefix}:{color}";
+                if (File.Exists(FilePath))
+                {
+                    foreach (var line in File.ReadAllLines(FilePath))
+                    {
+                        if (line.StartsWith($"{player.UserId}"))
+                        {
+                            List<string> lines = File.ReadAllLines(FilePath).ToList();
+                            lines.RemoveAll(line1 => line1.Contains($"{player.UserId}"));
+                            File.WriteAllLines(FilePath, lines);
+                        }
+                    }
+                }
+                File.AppendAllText(FilePath, text + Environment.NewLine);
                 response = "Succesfully change prefix!";
                 return true;
+
             }
         }
     }

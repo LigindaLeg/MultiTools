@@ -10,6 +10,7 @@ using Exiled.Events.EventArgs.Server;
 using MEC;
 using System.Collections.Generic;
 using Exiled.API.Features;
+using System.Linq;
 
 namespace MultiTools
 {
@@ -18,6 +19,7 @@ namespace MultiTools
         public string message;
         public string webhookUrl;
 
+        private static readonly string PrefixPath = $@"{Paths.Plugins}/MultiTools/{Server.Port}/Prefix.txt";
         public void OnCheaterLeave(LeftEventArgs ev)
         {
 			Player MultiTool = Player.Get("[MultiTools]");
@@ -101,7 +103,17 @@ namespace MultiTools
         }
         public void OnRoundStarted()
         {
-            
+            List<string> prefixes = File.ReadAllLines(PrefixPath).ToList();
+            foreach (string human in prefixes)
+            {
+                var parts = human.Split(':');
+                string steamid = parts[0];
+                string prefix = parts[1];
+                string color = parts[2];
+                Player nwe = Player.Get(steamid);
+                nwe.RankName = prefix;
+                nwe.RankColor = color;
+            }
         }
         public void OnEarningAchievement(EarningAchievementEventArgs ev)
         {
@@ -110,6 +122,20 @@ namespace MultiTools
         public void OnDetonated()
         {
             Map.ChangeLightsColor(Plugin.Instance.Config.color);
+        }
+        public void OnJoined(VerifiedEventArgs ev)
+        {
+            List<string> prefixes = File.ReadAllLines(PrefixPath).ToList();
+            foreach (string human in prefixes)
+            {
+                var parts = human.Split(':');
+                string steamid = parts[0];
+                string prefix = parts[1];
+                string color = parts[2];
+                Player nwe = Player.Get(steamid);
+                nwe.RankName = prefix;
+                nwe.RankColor = color;
+            }
         }
     }
 }

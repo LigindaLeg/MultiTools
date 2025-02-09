@@ -19,7 +19,11 @@ multi_tools:
   # Discord Message Template?
   d_s_message: '{bantime} \n```html\n<Выдал:> {admin} \n<Нарушитель:> {bad} \n<Причина:> {reason} \n
   # The lights color of the facility after the alpha warhead exploded?
-  color: red
+  color:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
   # Text when receiving achievement ([ach] - achievement)
   achievement: "Congratulations on achieving [ach]!"
  ```

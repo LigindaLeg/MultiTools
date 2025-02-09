@@ -34,74 +34,56 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\..\..\dependencies\0Harmony.dll</HintPath>
+      <HintPath>D:\ExMod DLL\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\dependencies\Assembly-CSharp.dll</HintPath>
+      <HintPath>D:\ExMod DLL\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>..\..\..\dependencies\Assembly-CSharp-firstpass.dll</HintPath>
-    </Reference>
-    <Reference Include="Assembly-CSharp-Publicized">
-      <HintPath>..\..\..\dependencies\Assembly-CSharp-Publicized.dll</HintPath>
-    </Reference>
-    <Reference Include="BouncyCastle.Cryptography">
-      <HintPath>..\..\..\Для Плагинов EXILED\dependencies\BouncyCastle.Cryptography.dll</HintPath>
+      <HintPath>D:\ExMod DLL\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="CommandSystem.Core">
-      <HintPath>..\..\..\dependencies\CommandSystem.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="DnsClient">
-      <HintPath>..\..\..\Для Плагинов EXILED\dependencies\DnsClient.dll</HintPath>
+      <HintPath>D:\ExMod DLL\CommandSystem.Core.dll</HintPath>
     </Reference>
     <Reference Include="Exiled.API, Version=8.9.6.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\dependencies\Exiled.API.dll</HintPath>
+      <HintPath>D:\ExMod DLL\Exiled.API.dll</HintPath>
     </Reference>
     <Reference Include="Exiled.CreditTags, Version=8.9.6.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\dependencies\Exiled.CreditTags.dll</HintPath>
+      <HintPath>D:\ExMod DLL\Exiled.CreditTags.dll</HintPath>
     </Reference>
     <Reference Include="Exiled.CustomItems, Version=8.9.6.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\dependencies\Exiled.CustomItems.dll</HintPath>
+      <HintPath>D:\ExMod DLL\Exiled.CustomItems.dll</HintPath>
     </Reference>
     <Reference Include="Exiled.CustomRoles, Version=8.9.6.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\dependencies\Exiled.CustomRoles.dll</HintPath>
+      <HintPath>D:\ExMod DLL\Exiled.CustomRoles.dll</HintPath>
     </Reference>
     <Reference Include="Exiled.Events, Version=8.9.6.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\dependencies\Exiled.Events.dll</HintPath>
+      <HintPath>D:\ExMod DLL\Exiled.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.Loader">
+      <HintPath>D:\ExMod DLL\Exiled.Loader.dll</HintPath>
     </Reference>
     <Reference Include="Exiled.Permissions, Version=8.9.6.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\dependencies\Exiled.Permissions.dll</HintPath>
-    </Reference>
-    <Reference Include="MapEditorReborn">
-      <HintPath>..\..\..\dependencies\MapEditorReborn.dll</HintPath>
+      <HintPath>D:\ExMod DLL\Exiled.Permissions.dll</HintPath>
     </Reference>
     <Reference Include="Mirror">
-      <HintPath>..\..\..\dependencies\Mirror.dll</HintPath>
+      <HintPath>D:\ExMod DLL\Mirror.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Для Плагинов EXILED\dependencies\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NorthwoodLib">
-      <HintPath>..\..\..\Для Плагинов EXILED\dependencies\NorthwoodLib.dll</HintPath>
-    </Reference>
-    <Reference Include="Octokit, Version=13.0.1.0, Culture=neutral, PublicKeyToken=0be8860aee462442, processorArchitecture=MSIL">
-      <HintPath>..\packages\Octokit.13.0.1\lib\netstandard2.0\Octokit.dll</HintPath>
+      <HintPath>D:\ExMod DLL\NorthwoodLib.dll</HintPath>
     </Reference>
     <Reference Include="PluginAPI">
-      <HintPath>..\..\..\dependencies\PluginAPI.dll</HintPath>
-    </Reference>
-    <Reference Include="SCPSLAudioApi">
-      <HintPath>..\..\..\dependencies\SCPSLAudioApi.dll</HintPath>
-    </Reference>
-    <Reference Include="SemanticVersioning">
-      <HintPath>..\..\..\dependencies\SemanticVersioning.dll</HintPath>
+      <HintPath>D:\ExMod DLL\PluginAPI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -113,29 +95,24 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\dependencies\UnityEngine.dll</HintPath>
+      <HintPath>D:\ExMod DLL\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\dependencies\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>D:\ExMod DLL\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>..\..\..\dependencies\UnityEngine.PhysicsModule.dll</HintPath>
+      <HintPath>D:\ExMod DLL\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="YamlDotNet">
-      <HintPath>..\..\..\dependencies\YamlDotNet.dll</HintPath>
-    </Reference>
-    <Reference Include="zxing">
-      <HintPath>..\..\..\Для Плагинов EXILED\dependencies\zxing.dll</HintPath>
+      <HintPath>D:\ExMod DLL\YamlDotNet.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoUpdater.cs" />
     <Compile Include="Commands\BlockDoors.cs" />
     <Compile Include="Commands\Call.cs" />
     <Compile Include="Commands\Cheater.cs" />
     <Compile Include="Commands\Check.cs" />
     <Compile Include="Commands\CustomPrefix.cs" />
-    <Compile Include="Commands\PermanentRole.cs" />
     <Compile Include="Commands\Warn.cs" />
     <Compile Include="Commands\Ptp.cs" />
     <Compile Include="Config.cs" />

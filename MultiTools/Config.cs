@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using Exiled.API.Interfaces;
 using PlayerRoles;
+using UnityEngine;
 
 namespace MultiTools
 {
@@ -13,7 +14,7 @@ namespace MultiTools
         [Description("Are debug messages displayed?")]
         public bool Debug { get; set; } = false;
         [Description("How much time does a cheater have before being banned?")]
-        public float CheatTime { get; set; } = 30;
+        public float CheatTime { get; set; } = 120;
         [Description("Cheat Ban Reason?")]
         public string BanReason { get; set; } = "You are banned for cheating [MultiTools]";
 
@@ -22,9 +23,8 @@ namespace MultiTools
 
         [Description("Discord Message Template?")]
         public string DSMessage { get; set; } = "{bantime} \n```html\n<Выдал:> {admin} \n<Нарушитель:> {bad} \n<Причина:> {reason} \n```";
-        [Description("AutoUpdater enable?")]
-        public bool AutoUpdate { get; set; } = true;
-        [Description("AutoUpdater folder path")]
-        public string FolderPath { get; set; } = $"{Exiled.API.Features.Paths.Configs}/MultiTools/AutoUpdater";
+
+        [Description("The lights color of the facility after the alpha warhead exploded?")]
+        public Color color { get; set; } = Color.red;
     }
 }

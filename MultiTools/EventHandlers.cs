@@ -103,5 +103,10 @@ namespace MultiTools
         {
             
         }
+        
+        public void OnDetonated()
+        {
+            Map.ChangeLightsColor(Plugin.Instance.Config.color);
+        }
     }
 }

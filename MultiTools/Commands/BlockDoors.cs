@@ -26,13 +26,19 @@ namespace MultiTools.Commands
                 return false;
             }
 
-            else if (arguments.Count == 0 || arguments.Count > 1)
+            else if (arguments.Count > 1)
             {
-                response = "Usage: blockdoors (ID)";
+                response = "Usage: blockdoors [ID]";
                 return false;
             }
-
-            BlockDoorUser = Player.Get(arguments.ElementAt(0));
+            else if (arguments.Count == 1)
+            {
+                BlockDoorUser = Player.Get(arguments.ElementAt(0));
+            }
+            else if (arguments.Count == 0)
+            {
+                BlockDoorUser = Player.Get(sender);
+            }
 
             if (BlockDoorUser == null)
             {
@@ -40,7 +46,7 @@ namespace MultiTools.Commands
                 return false;
             }
             
-            else if (BlockDoorUser != null && arguments.Count == 1)
+            else if (BlockDoorUser != null)
             {
                 Log.Info(BlockDoorUser);
                 if (Plugin.Instance.BlockDoorList.Contains(BlockDoorUser))

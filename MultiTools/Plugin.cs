@@ -40,8 +40,6 @@ namespace MultiTools
                      "╚═╝░░░░░╚═╝░╚═════╝░╚══════╝░░░╚═╝░░░╚═╝░░░╚═╝░░░░╚════╝░░╚════╝░╚══════╝╚═════╝░" +
                      "\n"
             );
-            AutoUpdater.CreatePLuginUpdaterFiles();
-            AutoUpdater.UpdatePlugins();
             base.OnEnabled();
         }
 
@@ -60,8 +58,9 @@ namespace MultiTools
             Exiled.Events.Handlers.Server.RoundStarted += new CustomEventHandler(eventHandlers.OnRoundStarted);
             Exiled.Events.Handlers.Player.Left += new CustomEventHandler<Exiled.Events.EventArgs.Player.LeftEventArgs>(eventHandlers.OnCheaterLeave);
             Exiled.Events.Handlers.Player.InteractingDoor += new CustomEventHandler<Exiled.Events.EventArgs.Player.InteractingDoorEventArgs>(eventHandlers.DoorBlock);
-            Exiled.Events.Handlers.Server.LocalReporting += new CustomEventHandler<Exiled.Events.EventArgs.Player.LocalReportingEventArgs>(eventHandlers.Reporting);
+            Exiled.Events.Handlers.Server.LocalReporting += new CustomEventHandler<Exiled.Events.EventArgs.Server.LocalReportingEventArgs>(eventHandlers.Reporting);
             Exiled.Events.Handlers.Player.Banned += new CustomEventHandler<Exiled.Events.EventArgs.Player.BannedEventArgs>(eventHandlers.OnPlayerBanned);
+            Exiled.Events.Handlers.Warhead.Detonated += new CustomEventHandler(eventHandlers.OnDetonated);
         }
 
         public void UnregisterEvents()
@@ -69,8 +68,9 @@ namespace MultiTools
             Exiled.Events.Handlers.Server.RoundStarted -= new CustomEventHandler(eventHandlers.OnRoundStarted);
             Exiled.Events.Handlers.Player.Left -= new CustomEventHandler<Exiled.Events.EventArgs.Player.LeftEventArgs>(eventHandlers.OnCheaterLeave);
             Exiled.Events.Handlers.Player.InteractingDoor -= new CustomEventHandler<Exiled.Events.EventArgs.Player.InteractingDoorEventArgs>(eventHandlers.DoorBlock);
-            Exiled.Events.Handlers.Server.LocalReporting -= new CustomEventHandler<Exiled.Events.EventArgs.Player.LocalReportingEventArgs>(eventHandlers.Reporting);
+            Exiled.Events.Handlers.Server.LocalReporting -= new CustomEventHandler<Exiled.Events.EventArgs.Server.LocalReportingEventArgs>(eventHandlers.Reporting);
             Exiled.Events.Handlers.Player.Banned -= new CustomEventHandler<Exiled.Events.EventArgs.Player.BannedEventArgs>(eventHandlers.OnPlayerBanned);
+            Exiled.Events.Handlers.Warhead.Detonated -= new CustomEventHandler(eventHandlers.OnDetonated);
 
             eventHandlers = null;
         }

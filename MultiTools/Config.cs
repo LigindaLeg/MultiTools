@@ -26,5 +26,7 @@ namespace MultiTools
 
         [Description("The lights color of the facility after the alpha warhead exploded?")]
         public Color color { get; set; } = Color.red;
+        [Description("Text when receiving achievement ([ach] - achievement)")]
+        public string achievement { get; set; } = "Congratulations on achieving [ach]!";
     }
 }

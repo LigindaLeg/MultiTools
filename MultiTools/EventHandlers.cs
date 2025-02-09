@@ -103,7 +103,10 @@ namespace MultiTools
         {
             
         }
-        
+        public void OnEarningAchievement(EarningAchievementEventArgs ev)
+        {
+            ev.Player.ShowHint(Plugin.Instance.Config.achievement.Replace("[ach]".ToString(), ev.AchievementName.ToString()), 5);
+        }
         public void OnDetonated()
         {
             Map.ChangeLightsColor(Plugin.Instance.Config.color);

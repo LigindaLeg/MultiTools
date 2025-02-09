@@ -9,7 +9,7 @@ namespace MultiTools
     {
         public override string Name => "MultiTools";
         public override string Author => "Liginda";
-        public override Version Version => new Version(1, 0, 9);
+        public override Version Version => new Version(1, 1, 1);
         public override Version RequiredExiledVersion => new Version(8, 9, 6);
         public override string Prefix => "MultiTools";
 
@@ -18,12 +18,6 @@ namespace MultiTools
         public EventHandlers eventHandlers;
         public List<Player> BlockDoorList = new List<Player>();
         internal static bool warningsent = false;
-        public class PluginInfo
-        {
-            public string Name { get; set; }
-            public string GitHubRepoUrl { get; set; }
-        }
-        public readonly PluginInfo pluginToUpdate = new PluginInfo { Name = "MultiTools", GitHubRepoUrl = "https://github.com/LigindaLeg/MultiTools" };
         public override void OnEnabled()
         {
             Instance = this;
@@ -61,6 +55,7 @@ namespace MultiTools
             Exiled.Events.Handlers.Server.LocalReporting += new CustomEventHandler<Exiled.Events.EventArgs.Server.LocalReportingEventArgs>(eventHandlers.Reporting);
             Exiled.Events.Handlers.Player.Banned += new CustomEventHandler<Exiled.Events.EventArgs.Player.BannedEventArgs>(eventHandlers.OnPlayerBanned);
             Exiled.Events.Handlers.Warhead.Detonated += new CustomEventHandler(eventHandlers.OnDetonated);
+            Exiled.Events.Handlers.Player.EarningAchievement += new CustomEventHandler<Exiled.Events.EventArgs.Player.EarningAchievementEventArgs>(eventHandlers.OnEarningAchievement);
         }
 
         public void UnregisterEvents()
@@ -71,6 +66,7 @@ namespace MultiTools
             Exiled.Events.Handlers.Server.LocalReporting -= new CustomEventHandler<Exiled.Events.EventArgs.Server.LocalReportingEventArgs>(eventHandlers.Reporting);
             Exiled.Events.Handlers.Player.Banned -= new CustomEventHandler<Exiled.Events.EventArgs.Player.BannedEventArgs>(eventHandlers.OnPlayerBanned);
             Exiled.Events.Handlers.Warhead.Detonated -= new CustomEventHandler(eventHandlers.OnDetonated);
+            Exiled.Events.Handlers.Player.EarningAchievement -= new CustomEventHandler<Exiled.Events.EventArgs.Player.EarningAchievementEventArgs>(eventHandlers.OnEarningAchievement);
 
             eventHandlers = null;
         }

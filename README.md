@@ -4,7 +4,7 @@ MultiTools plugin for Exiled has many features
 
 
 Default Config:
-```
+```yaml
 multi_tools:
   # Is the plugin enabled?
   is_enabled: true
@@ -51,4 +51,4 @@ playercheck (id) - Check player violations
 customprefix (id) (color) (prefix) - Set custom prefix to player
 ```
 
-Supported Exiled 8.9.6+
+Supported Exiled 9.0.0+

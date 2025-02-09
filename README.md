@@ -30,7 +30,7 @@ multi_tools:
 
 
 Plugin permissions:
-```cs
+```yaml
 mt.cheater
 mt.reverse 
 mt.blockdoors
@@ -41,7 +41,7 @@ mt.customprefix
 
 
 Plugin Commands:
-```cpp
+```yaml
 cheater (id) - Forces player to cheat checking
 reverse [id] - Reverse player
 blockdoors (id) - Set enabled or disabled to lock/unlock doors on interacting

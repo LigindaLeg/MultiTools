@@ -17,7 +17,7 @@ multi_tools:
   # Discord Webhook to Ban-Notify?
   webhook_notify_ban: 'Paste your webhook here'
   # Discord Message Template?
-  d_s_message: '{bantime} \n```html\n<Выдал:> {admin} \n<Нарушитель:> {bad} \n<Причина:> {reason} \n
+  d_s_message: '{bantime} \n```html\n<Выдал:> {admin} \n<Нарушитель:> {bad} \n<Причина:> {reason} \n'
   # The lights color of the facility after the alpha warhead exploded?
   color:
     r: 1

@@ -1,4 +1,4 @@
-MultiTools/bin/*
-MultiTools/obj/*
+MultiTools/bin/
+MultiTools/obj/
 .vs
 packages

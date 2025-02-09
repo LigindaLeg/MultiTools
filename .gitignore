@@ -1,3 +1,4 @@
-bin
-obj
+MultiTools/bin/*
+MultiTools/obj/*
 .vs
+packages

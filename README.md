@@ -37,6 +37,7 @@ mt.blockdoors
 mt.check
 mt.warn
 mt.customprefix
+mt.mhp
  ```
 
 
@@ -49,6 +50,7 @@ blockdoors (id) - Set enabled or disabled to lock/unlock doors on interacting
 warn <add, delete, list> (id) [reason] - Manage Player Warnings
 playercheck (id) - Check player violations
 customprefix (id) (color) (prefix) - Set custom prefix to player
+maxhp (id) (value) - Set max health for player
 ```
 
 Supported Exiled 9.0.0+

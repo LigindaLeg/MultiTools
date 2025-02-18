@@ -10,7 +10,7 @@ namespace MultiTools
     {
         public override string Name => "MultiTools";
         public override string Author => "Liginda";
-        public override Version Version => new Version(1, 1, 2);
+        public override Version Version => new Version(1, 1, 4);
         public override Version RequiredExiledVersion => new Version(9,0,0);
         public override string Prefix => "MultiTools";
 
@@ -86,7 +86,7 @@ namespace MultiTools
         public void RegisterEvents()
         {
             eventHandlers = new EventHandlers();
-            Exiled.Events.Handlers.Server.RoundStarted += new CustomEventHandler(eventHandlers.OnRoundStarted);
+/*            Exiled.Events.Handlers.Server.RoundStarted += new CustomEventHandler(eventHandlers.OnRoundStarted);*/
             Exiled.Events.Handlers.Player.Left += new CustomEventHandler<Exiled.Events.EventArgs.Player.LeftEventArgs>(eventHandlers.OnCheaterLeave);
             Exiled.Events.Handlers.Player.InteractingDoor += new CustomEventHandler<Exiled.Events.EventArgs.Player.InteractingDoorEventArgs>(eventHandlers.DoorBlock);
             Exiled.Events.Handlers.Server.LocalReporting += new CustomEventHandler<Exiled.Events.EventArgs.Server.LocalReportingEventArgs>(eventHandlers.Reporting);
@@ -98,7 +98,7 @@ namespace MultiTools
 
         public void UnregisterEvents()
         {
-            Exiled.Events.Handlers.Server.RoundStarted -= new CustomEventHandler(eventHandlers.OnRoundStarted);
+/*            Exiled.Events.Handlers.Server.RoundStarted -= new CustomEventHandler(eventHandlers.OnRoundStarted);*/
             Exiled.Events.Handlers.Player.Left -= new CustomEventHandler<Exiled.Events.EventArgs.Player.LeftEventArgs>(eventHandlers.OnCheaterLeave);
             Exiled.Events.Handlers.Player.InteractingDoor -= new CustomEventHandler<Exiled.Events.EventArgs.Player.InteractingDoorEventArgs>(eventHandlers.DoorBlock);
             Exiled.Events.Handlers.Server.LocalReporting -= new CustomEventHandler<Exiled.Events.EventArgs.Server.LocalReportingEventArgs>(eventHandlers.Reporting);

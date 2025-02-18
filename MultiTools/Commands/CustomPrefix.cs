@@ -13,14 +13,10 @@ namespace MultiTools.Commands
     public class CustomPrefix : ICommand
     {
         public string Command { get; } = "customprefix";
-
-        
-        /// <inheritdoc/>
         public string[] Aliases { get; } = new[] { "cp", "cprefix", "customp" };
-
-        /// <inheritdoc/>
         public string Description { get; } = "Set custom prefix to player";
 
+        public string[] Usage { get; } = new string[] { "%player%", "Color", "Text" };
         private static readonly string FilePath = $@"{Paths.Plugins}/MultiTools/{Server.Port}/Prefix.txt";
         public List<string> Colors { get; } = new List<string>() 
         { 
@@ -37,14 +33,31 @@ namespace MultiTools.Commands
                 return false;
             }
             
-            else if (arguments.Count < 3)
+            else if (arguments.Count < 3 && arguments.At(0) != "clear" || (arguments.At(0) == "clear" && arguments.Count < 2))
             {
-                response = "Using: cp (id) (color) (prefix)";
+                response = "Usage: cp (id) (color) (prefix)";
                 return false;
             }
-            
             else
             {
+                if (arguments.At(0) == "clear")
+                {
+                    Player player2 = Player.Get(arguments.At(0));
+                    if (File.Exists(FilePath))
+                    {
+                        foreach (var line in File.ReadAllLines(FilePath))
+                        {
+                            if (line.StartsWith($"{player2.UserId}"))
+                            {
+                                List<string> lines = File.ReadAllLines(FilePath).ToList();
+                                lines.RemoveAll(line1 => line1.Contains($"{player2.UserId}"));
+                                File.WriteAllLines(FilePath, lines);
+                            }
+                        }
+                    }
+                    response = "Succesfully!";
+                    return true;
+                }
                 Player player = Player.Get(arguments.At(0));
                 string color = arguments.At(1);
                 string prefix = "";

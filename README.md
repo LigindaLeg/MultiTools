@@ -50,6 +50,7 @@ blockdoors (id) - Set enabled or disabled to lock/unlock doors on interacting
 warn <add, delete, list> (id) [reason] - Manage Player Warnings
 playercheck (id) - Check player violations
 customprefix (id) (color) (prefix) - Set custom prefix to player
+customprefix clear (id) - Remove custom prefix from player
 maxhp (id) (value) - Set max health for player
 ```
 
